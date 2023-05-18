@@ -22,9 +22,9 @@ def affichage_mot(solution,lettre_trouvees):
 def processus_joueur(chance, lettre_pas_bonnes, lettre_trouvees):
     #tant qu'il nous reste des chances pour trouver le mot
     while chance > 0:
-        print('-----------------')
+
         #[0:1] permet de récupérer que la première lettre proposée par le joueur même s'il en rentre plusieurs
-        proposition = str(input('Proposez une lettre : '))[0:1]
+        proposition = str(input('- Proposez une lettre : '))[0:1]
         #blindé pour ne pas proposer plusieurs fois la même lettre
         if proposition in lettre_pas_bonnes+lettre_trouvees:
             print('Vous avez déjà essayé cette lettre')
@@ -65,6 +65,6 @@ lettre_pas_bonnes = ''
 reponse = choisir_mot(mots)
 #utile pour la correction mais normalement cette ligne ne devrait
 #pas etre là pour ne pas donner la solution au joueur
-print(reponse)
+print('Réponse : ' + reponse)
 
 processus_joueur(chance,lettre_pas_bonnes,lettre_trouvees)
